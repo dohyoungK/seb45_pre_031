@@ -1,9 +1,13 @@
 # (1) base-image
 FROM openjdk:11
 
-ENV G_CLIENT_ID=${{secrets.G_CLIENT_ID}} \
-    G_CLIENT_SECRET=${{secrets.G_CLIENT_SECRET}} \
-    JWT_SECRET_KEY=${{secrets.JWT_SECRET_KEY}}
+AGR G_CLIENT_ID \
+    G_CLIENT_SECRET \
+    JWT_SECRET_KEY
+
+ENV G_CLIENT_ID=${G_CLIENT_ID} \
+    G_CLIENT_SECRET=${G_CLIENT_SECRET} \
+    JWT_SECRET_KEY=${JWT_SECRET_KEY}
 
 # (2) COPY에서 사용될 경로 변수
 ARG JAR_FILE=build/libs/*-SNAPSHOT.jar
