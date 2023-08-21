@@ -1,7 +1,7 @@
 # (1) base-image
 FROM openjdk:11
 
-AGR G_CLIENT_ID \
+ARG G_CLIENT_ID \
     G_CLIENT_SECRET \
     JWT_SECRET_KEY
 
